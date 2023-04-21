@@ -1,49 +1,23 @@
-import "./index.scss";
-import { useState } from "react";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-
-  let [count, setCount] = useState(0);
-
-  const encriment = () => {
-    if (count <= 10) {
-      setCount((count -= 10));
-    } else if (count <= 100) {
-      setCount(count -= 100);
-    }
-   setCount(count -= 1);
-  };
-  const decriment = () => {
-     if (count >= 10) {
-       setCount(count += 10);
-     } else if (count >= 100) {
-       setCount(count += 100);
-     }
-     setCount(count += 1);
-  };
-
   return (
     <div className="App">
-      <div>
-        <h2>Счетчик:</h2>
-        <h1>{count}</h1>
-        <button
-          className="minus"
-          onClick={() => {
-            encriment();
-          }}
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          - Минус
-        </button>
-        <button
-          className="plus"
-          onClick={() => {
-            decriment();
-          }}
-        >
-          Плюс +
-        </button>
-      </div>
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
